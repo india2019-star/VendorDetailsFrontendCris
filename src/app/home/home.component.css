@@ -1,0 +1,32 @@
+
+body
+{
+  background-image: url('https://wallpaperaccess.com/full/1457234.jpg');
+  background-size: cover;
+  height: 800px;
+}
+
+#homediv{
+  
+  margin-top: 0;
+  padding: 0;
+}
+
+#innerdiv{
+  position: absolute;
+  margin-top: 300px;
+  margin-left: 400px;
+  color: rgb(238, 238, 255);
+  
+  
+}
+p{
+  font-size: 30px;
+}
+h1{
+  font-size: 50px;
+}
+
+
+
+

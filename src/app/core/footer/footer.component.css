@@ -1,0 +1,20 @@
+
+.container {
+  width: 1519px;
+  max-width: 2000px;
+  padding: 0 15px;
+}
+
+  .footer {
+    position: absolute;
+    top: 950px;
+    background-color: #f5f5f5;
+  }
+
+  h5 {
+    margin-left: 250px;
+  }
+  
+
+
+ 

@@ -1,49 +1,30 @@
 <div class="container">
-    <form action="/vendordetails" class="form-signin" [formGroup]="vendorForm" (ngSubmit)="displayDetails()">
+    <form  class="form-signin" [formGroup]="vendorForm" (ngSubmit)="displayDetails()">
         <div class="text-center mb-4">
           <h1 class="h3 mb-3 font-weight-normal">Vendor Details</h1>
         </div>
       
-        <app-reusable-text-component formControlName="vendorId" [type]="'number'" [placeholder]="'Vendor Id'"></app-reusable-text-component>
+        <app-reusable-text-component formControlName="vendorId" [type]="'number'" [placeholder]="'Vendor Id'" autofocus></app-reusable-text-component>
         <app-reusable-text-component formControlName="vendorName" [type]="'text'" [placeholder]="'Vendor Name'"></app-reusable-text-component>
         <app-reusable-text-component formControlName="zoneCode" [type]="'text'" [placeholder]="'Zone Code'"></app-reusable-text-component>
         <app-reusable-text-component formControlName="divisionCode" [type]="'text'" [placeholder]="'Division Code'"></app-reusable-text-component>
         <app-reusable-text-component formControlName="locationCode" [type]="'text'" [placeholder]="'Location Code'"></app-reusable-text-component>
         <app-reusable-text-component formControlName="ipAddress" [type]="'text'" [placeholder]="'Ip Address'"></app-reusable-text-component>
-        <app-reusable-text-component formControlName="interfaceType" [type]="'text'" [placeholder]="'Interface Type'"></app-reusable-text-component>
-        
+        <!-- <app-reusable-text-component formControlName="interfaceType" [type]="'text'" [placeholder]="'Interface Type'"></app-reusable-text-component> -->
+        <div>
+          
+          <select class="form-control" name="interfaceType" formControlName="interfaceType">
+            <option value="" disabled selected hidden>Choose Interface Type</option>
+            <option [value]="it" *ngFor="let it of interfaceTypesArr">{{it}}</option>
+            
+          </select>
+          
+        </div>
         
         <button  [disabled]="!vendorForm.valid"   class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
       </form>
       <!-- <div class="container">
         <h3>{{this.vendorForm.value | json}}</h3>
       </div> -->
-      <div class="container">
-        <h3 class="text-center" style="margin-top:100px; margin-bottom: 50px;" *ngIf="!vendorDetails">No Vendor Details Found!!!</h3>
-        <table class="table table-striped table-hover" *ngIf="vendorDetails.length > 0">
-          <thead>
-            <tr>
-              <th>Vendor Id</th>
-              <th>Vendor Name</th>
-              <th>Zone Code</th>
-              <th>Division Code</th>
-              <th>Location Code</th>
-              <th>Ip Address</th>
-              <th>Interface Type(Touch Screen/ Display Board/ etc.)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let v of vendorDetails">
-              <td>{{v.vendorId}}</td>
-              <td>{{v.vendorName}}</td>
-              <td>{{v.zoneCode}}</td>
-              <td>{{v.divisionCode}}</td>
-              <td>{{v.locationCode}}</td>
-              <td>{{v.ipAddress}}</td>
-              <td>{{v.interfaceType}}</td>
-            </tr>
-          </tbody>
-        </table>
-
-      </div>
+     
 </div>
